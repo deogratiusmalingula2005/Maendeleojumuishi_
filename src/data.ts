@@ -102,14 +102,14 @@ export const POSTS: Post[] = [
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800'
   },
   {
-    id: 'post-11',
-    title: 'Mwongozo wa Uongozi Bora kwa Vijana',
-    date: 'Februari 10, 2026',
-    category: 'Nakala',
-    preview: 'Mwongozo huu unatoa misingi na stadi muhimu kwa vijana wanaotaka kuingia katika uongozi wa umma...',
-    content: 'Mwongozo huu unatoa misingi na stadi muhimu kwa vijana wanaotaka kuingia katika uongozi wa umma. Ni nyenzo muhimu katika kujenga kizazi kipya cha viongozi waadilifu na wenye maono.',
-    tags: ['Mwongozo', 'Uongozi', 'Vijana'],
-    image: 'https://images.unsplash.com/photo-1454165833767-027ffea9e778?auto=format&fit=crop&q=80&w=800'
+    id: 'post-12',
+    title: 'Thamani ya Shilingi ya Tanzania na Athari zake katika Uchumi',
+    date: 'Machi 23, 2026',
+    category: 'Kiuchumi',
+    preview: 'Uchambuzi wa mwenendo wa Shilingi ya Tanzania dhidi ya sarafu za kigeni na jinsi unavyoathiri mfumuko wa bei na gharama za maisha...',
+    content: 'Mwenendo wa Shilingi ya Tanzania (TZS) dhidi ya sarafu kuu za kigeni, hususan Dola ya Marekani (USD), ni kiashiria muhimu cha afya ya uchumi wetu. Katika miezi ya hivi karibuni, tumeshuhudia mabadiliko yanayohitaji uchambuzi wa kina.\n\nAthari za kushuka kwa thamani ya Shilingi ni pamoja na:\n1. Mfumuko wa Bei: Bidhaa nyingi tunazoagiza kutoka nje, ikiwemo mafuta na mitambo, huuzwa kwa Dola. Shilingi inapopoteza nguvu, gharama za bidhaa hizi hupanda, jambo linalopelekea kupanda kwa gharama za maisha kwa mwananchi wa kawaida.\n2. Deni la Taifa: Sehemu kubwa ya deni letu la nje lipo katika sarafu za kigeni. Kushuka kwa Shilingi kunaongeza mzigo wa kulipa deni hilo kwa thamani ya ndani.\n3. Mauzo ya Nje: Kwa upande mwingine, Shilingi dhaifu inaweza kusaidia wauzaji wa bidhaa nje (exporters) kwani bidhaa zao zinakuwa na ushindani zaidi katika soko la kimataifa.\n\nMkakati wetu unalenga kuimarisha akiba ya fedha za kigeni kupitia kukuza utalii, kuongeza thamani ya mazao ya kilimo kabla ya kuuza nje, na kupunguza utegemezi wa bidhaa za kuagiza ambazo zinaweza kuzalishwa hapa nchini.',
+    tags: ['Shilingi', 'Uchumi', 'Fedha'],
+    image: 'https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&q=80&w=800'
   }
 ];
 
