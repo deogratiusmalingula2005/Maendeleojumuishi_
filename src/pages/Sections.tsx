@@ -15,7 +15,7 @@ export const CategoryPage = ({ category, title, description }: { category: strin
   const filteredPosts = POSTS.filter(post => post.category === category);
   
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12 bg-white/0 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
       <div className="text-center mb-20">
         <span className="inline-block px-4 py-1 bg-tz-green/10 text-tz-green text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Mageuzi {category}</span>
         <h1 className="text-4xl md:text-6xl font-serif font-black text-tz-black mb-6 tracking-tight">{title}</h1>
@@ -38,7 +38,7 @@ export const CategoryPage = ({ category, title, description }: { category: strin
 };
 
 export const Ziara = () => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12 bg-white/0 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
     <div className="text-center mb-20">
       <span className="inline-block px-4 py-1 bg-tz-green/10 text-tz-green text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Ziara na Matukio</span>
       <h1 className="text-4xl md:text-6xl font-serif font-black text-tz-black mb-6 tracking-tight">Ziara na Matukio</h1>
@@ -76,7 +76,7 @@ export const Ziara = () => (
 );
 
 export const Rekodi = () => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12 bg-white/0 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
     <div className="text-center mb-20">
       <span className="inline-block px-4 py-1 bg-tz-green/10 text-tz-green text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Rekodi na Nyaraka</span>
       <h1 className="text-4xl md:text-6xl font-serif font-black text-tz-black mb-6 tracking-tight">Rekodi Muhimu</h1>
@@ -96,7 +96,7 @@ export const Rekodi = () => (
 );
 
 export const Vision = () => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 bg-white/0 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
     <div className="glass-card p-12 md:p-24 text-center relative overflow-hidden border-t-8 border-tz-green">
       <div className="absolute top-0 left-0 w-full h-1 bg-tz-green/20"></div>
       <Eye className="w-16 h-16 text-tz-green mx-auto mb-10" />
@@ -123,7 +123,7 @@ export const Vision = () => (
 );
 
 export const Contact = () => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 bg-white/0 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
     <div className="glass-card overflow-hidden flex flex-col md:flex-row max-w-6xl mx-auto shadow-2xl">
       <div className="md:w-1/3 bg-tz-black p-12 text-white flex flex-col justify-between relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-tz-green/20 rounded-full -mr-16 -mt-16 blur-3xl"></div>
@@ -185,7 +185,7 @@ export const Mengineyo = () => {
   const filteredPosts = POSTS.filter(post => !mainCategories.includes(post.category));
   
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12 bg-white/0 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
       <div className="text-center mb-20">
         <span className="inline-block px-4 py-1 bg-tz-green/10 text-tz-green text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Mageuzi Mengineyo</span>
         <h1 className="text-4xl md:text-6xl font-serif font-black text-tz-black mb-6 tracking-tight">Mengineyo</h1>

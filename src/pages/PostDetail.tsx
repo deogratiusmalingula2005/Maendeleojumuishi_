@@ -24,8 +24,9 @@ export const PostDetail = () => {
     <motion.div 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="bg-white pt-64"
+      className="bg-transparent pt-64 min-h-screen"
     >
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 bg-white/0 backdrop-blur-md rounded-[40px] shadow-2xl border border-white/20 p-8 md:p-16 my-12">
       {/* Article Header */}
       <header className="py-12 border-b border-neutral-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
@@ -115,6 +116,7 @@ export const PostDetail = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </motion.div>
   );

@@ -6,7 +6,7 @@ import { POSTS } from '../data';
 
 const Logo = () => (
   <Link to="/" className="flex items-center gap-3 group">
-    <div className="w-12 h-12 bg-tz-green rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform shadow-lg shadow-tz-green/20">
+    <div className="w-12 h-12 bg-tz-green/60 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform shadow-lg shadow-tz-green/20">
       <span className="text-white font-black text-2xl tracking-tighter">M</span>
     </div>
     <div className="flex flex-col">
@@ -45,7 +45,7 @@ export const Header = () => {
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-white/80 backdrop-blur-md'
+        isScrolled ? 'bg-white/60 backdrop-blur-xl shadow-lg' : 'bg-white/30 backdrop-blur-lg'
       }`}
     >
       {/* Top Row: Navigation Links (Visible on all devices) */}
@@ -60,8 +60,8 @@ export const Header = () => {
                 to={item.path}
                 className={`px-4 sm:px-6 py-2 sm:py-2.5 text-[9px] sm:text-[10px] font-extrabold transition-all duration-300 rounded-xl uppercase tracking-[0.1em] whitespace-nowrap shadow-sm hover:shadow-md active:scale-95 ${
                   location.pathname === item.path 
-                    ? 'bg-tz-green text-white shadow-tz-green/20' 
-                    : 'bg-neutral-50 text-tz-black hover:bg-neutral-100 border border-neutral-100'
+                    ? 'bg-tz-green/80 text-white shadow-tz-green/20' 
+                    : 'bg-white/20 text-tz-black hover:bg-white/40 border border-white/10 backdrop-blur-sm'
                 }`}
               >
                 {item.name}
@@ -183,7 +183,7 @@ export const Header = () => {
 };
 
 export const Footer = () => (
-  <footer className="bg-tz-black text-white pt-24 pb-12">
+  <footer className="bg-tz-black/60 backdrop-blur-xl text-white pt-24 pb-12">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-20">
         <div className="lg:col-span-4">
