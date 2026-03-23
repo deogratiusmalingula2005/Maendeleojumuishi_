@@ -4,6 +4,7 @@ import { POSTS } from '../data';
 import { NewsCard } from '../components/News';
 import { Calendar, Clock, Users, Share2, Bookmark } from 'lucide-react';
 import { motion } from 'framer-motion';
+import ReactMarkdown from 'react-markdown';
 
 export const PostDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -58,26 +59,26 @@ export const PostDetail = () => {
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-16">
-            <div className="lg:col-span-8 lg:col-start-1">
-              <div className="mb-12 rounded-xl overflow-hidden shadow-2xl">
+            <div className="lg:col-span-10 lg:col-start-1">
+              <div className="mb-12 rounded-xl overflow-hidden shadow-2xl bg-neutral-100 flex flex-col items-center">
                 <img 
                   src={post.image} 
                   alt={post.title} 
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-contain max-h-[600px]"
                   referrerPolicy="no-referrer"
                 />
-                <div className="bg-neutral-50 p-4 text-[10px] text-neutral-400 uppercase tracking-widest font-bold border-t border-neutral-100">
+                <div className="bg-neutral-50 p-4 text-[10px] text-neutral-400 uppercase tracking-widest font-bold border-t border-neutral-100 w-full text-center">
                   Picha: Maendeleo Jumuishi Archive / 2026
                 </div>
               </div>
 
-              <div className="post-content">
-                <p className="text-xl font-medium text-tz-black leading-relaxed mb-10 italic">
+              <div className="post-content px-4 md:px-0">
+                <p className="text-xl font-bold text-tz-black leading-relaxed mb-10 italic">
                   {post.preview}
                 </p>
-                {post.content.split('\n\n').map((paragraph, i) => (
-                  <p key={i} className="mb-8">{paragraph}</p>
-                ))}
+                <div className="text-lg text-neutral-700 leading-relaxed markdown-content">
+                  <ReactMarkdown>{post.content}</ReactMarkdown>
+                </div>
               </div>
 
               {/* Tags & Share */}
