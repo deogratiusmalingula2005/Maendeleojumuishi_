@@ -7,6 +7,7 @@ export interface Post {
   content: string;
   image?: string;
   tags: string[];
+  author?: string;
 }
 
 export interface Policy {

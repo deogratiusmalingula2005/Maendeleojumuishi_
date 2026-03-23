@@ -37,7 +37,7 @@ export const PostDetail = () => {
             <div className="p-8 md:p-12">
               <div className="flex flex-wrap items-center gap-6 text-sm text-neutral-400 mb-8 border-b border-neutral-100 pb-6">
                 <span className="flex items-center gap-2"><Calendar className="w-4 h-4" /> {post.date}</span>
-                <span className="flex items-center gap-2"><User className="w-4 h-4" /> Admin</span>
+                <span className="flex items-center gap-2"><User className="w-4 h-4" /> {post.author || 'Deogratius Malingula'}</span>
                 <span className="px-3 py-1 rounded-full bg-tz-green/10 text-tz-green font-bold text-xs uppercase">{post.category}</span>
               </div>
 

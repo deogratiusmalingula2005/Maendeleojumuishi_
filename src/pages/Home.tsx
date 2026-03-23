@@ -10,6 +10,15 @@ export const Home = () => {
     <div className="space-y-12 pb-20">
       {/* Hero Section */}
       <section className="relative pt-20 pb-32 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&q=80&w=1920" 
+            alt="Tanzania Landscape" 
+            className="w-full h-full object-cover opacity-30"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-tz-black/80 via-tz-black/40 to-tz-black/90"></div>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <motion.div 
@@ -21,7 +30,7 @@ export const Home = () => {
                 Uongozi wa Kisasa
               </span>
               <h1 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight mb-6">
-                Karibu Katika Zama Mpya za <span className="tz-gradient-text">Uongozi</span>
+                Karibu katika zama mpya za <span className="tz-gradient-text">maendeleo Jumuishi</span>
               </h1>
               <p className="text-xl text-neutral-300 mb-10 leading-relaxed max-w-2xl">
                 Tunaamini katika uongozi unaojali kila mwananchi. Maendeleo ni jukwaa la kimkakati linalolenga kujenga Tanzania imara kupitia sera bora na mipango madhubuti.

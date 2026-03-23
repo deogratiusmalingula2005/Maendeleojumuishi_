@@ -52,6 +52,22 @@ export const NewsCard: React.FC<{ post: Post }> = ({ post }) => (
 export const Sidebar = () => (
   <aside className="space-y-8">
     <div className="sidebar-card">
+      <div className="flex flex-col items-center text-center p-4">
+        <div className="w-24 h-24 rounded-full overflow-hidden mb-4 ring-4 ring-tz-green/20">
+          <img 
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200" 
+            alt="Deogratius Malingula" 
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+        <h4 className="text-lg font-bold text-tz-black">Deogratius Malingula</h4>
+        <p className="text-xs text-neutral-500 mt-1 uppercase tracking-widest font-bold">Mhariri Mkuu</p>
+        <div className="w-12 h-1 bg-tz-green mt-4 rounded-full"></div>
+      </div>
+    </div>
+
+    <div className="sidebar-card">
       <h4 className="text-lg font-bold text-tz-black mb-6 border-b border-neutral-100 pb-2">Trending Topics</h4>
       <ul className="space-y-4">
         {['Uongozi wa Vijana', 'Uchumi wa Viwanda', 'Mageuzi ya Elimu', 'Haki za Binadamu', 'Teknolojia Tanzania'].map((topic, i) => (
