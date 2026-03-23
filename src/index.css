@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
   
-  --color-tz-green: #1EB53A;
-  --color-tz-blue: #00A3DD;
-  --color-tz-black: #000000;
-  --color-tz-yellow: #FCD116;
+  --color-tz-green: #1E5128;
+  --color-tz-yellow: #F7CC44;
+  --color-tz-blue: #00A3E0;
+  --color-tz-black: #121212;
+  --color-paper: #F8F9FA;
+  --color-ink: #1A1A1A;
 }
 
 @layer base {
@@ -16,62 +19,79 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-neutral-900 text-neutral-900 font-sans min-h-screen relative;
+    @apply bg-paper text-ink font-sans min-h-screen relative overflow-x-hidden antialiased;
   }
 }
 
-/* Background Image with Blur and Overlay */
-.site-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-  background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1920');
-  background-size: cover;
-  background-position: center;
-  filter: blur(8px);
-  transform: scale(1.1); /* Prevent white edges from blur */
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl rounded-3xl overflow-hidden transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply px-8 py-4 bg-tz-black text-white font-bold rounded-2xl hover:bg-neutral-800 transition-all shadow-lg hover:shadow-xl active:scale-95;
+  }
+
+  .btn-green {
+    @apply px-8 py-4 bg-tz-green text-white font-bold rounded-2xl hover:bg-tz-green/90 transition-all shadow-lg hover:shadow-xl active:scale-95;
+  }
+
+  .btn-yellow {
+    @apply px-8 py-4 bg-tz-yellow text-tz-black font-bold rounded-2xl hover:bg-tz-yellow/90 transition-all shadow-lg hover:shadow-xl active:scale-95;
+  }
+
+  .btn-outline {
+    @apply px-8 py-4 bg-transparent border-2 border-tz-black text-tz-black font-bold rounded-2xl hover:bg-tz-black hover:text-white transition-all active:scale-95;
+  }
+
+  @keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee-patriotic {
+    animation: marquee-scroll 15s linear infinite;
+  }
+
+  .marquee-glow {
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05), 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-neon-tz {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+  }
+
+  .section-header {
+    @apply flex items-center justify-between mb-12 border-b border-neutral-200 pb-6;
+  }
+
+  .section-title {
+    @apply text-3xl font-display font-bold text-tz-black;
+  }
+
+  /* Post Content Styles */
+  .post-content {
+    @apply max-w-3xl mx-auto text-lg text-neutral-700 leading-relaxed;
+  }
+
+  .post-content p {
+    @apply mb-6;
+  }
+
+  .post-content h2 {
+    @apply text-2xl font-display font-bold mt-12 mb-6 text-tz-black;
+  }
+
+  .post-content blockquote {
+    @apply pl-6 border-l-4 border-tz-green italic text-xl my-8 text-neutral-600;
+  }
+
+  .post-content img {
+    @apply rounded-3xl shadow-2xl my-10 w-full object-cover aspect-video;
+  }
 }
 
-.site-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85));
-}
-
-@keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-.animate-marquee {
-  display: inline-block;
-  white-space: nowrap;
-  animation: marquee 60s linear infinite;
-}
-
-.glass-card {
-  @apply bg-white/95 backdrop-blur-md border border-white/20 shadow-xl rounded-2xl;
-}
-
-.sidebar-card {
-  @apply bg-white/90 backdrop-blur-sm border border-white/10 shadow-lg rounded-xl p-6;
-}
-
-.news-card {
-  @apply bg-white border border-neutral-100 shadow-sm hover:shadow-md transition-shadow duration-200 rounded-xl overflow-hidden;
-}
-
-.tz-gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-tz-green via-tz-yellow to-tz-blue;
-}
-
-.nav-link-active {
-  @apply text-tz-green font-bold border-b-2 border-tz-green;
+.dot-pattern {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
 }

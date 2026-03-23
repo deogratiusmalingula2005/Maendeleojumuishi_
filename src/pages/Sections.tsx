@@ -11,78 +11,58 @@ const IconMap: any = {
   'sprout': <Sprout className="w-6 h-6" />,
 };
 
-export const Sera = () => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-12">
-    <div className="text-center text-white mb-16">
-      <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">Sera Zetu (Policies)</h1>
-      <p className="text-xl text-neutral-300 max-w-2xl mx-auto">Misingi ya maendeleo yetu imejikita katika sera zinazogusa maisha ya kila siku ya mwananchi.</p>
-    </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {POLICIES.map((policy) => (
-        <motion.div 
-          key={policy.id}
-          whileHover={{ y: -10 }}
-          className="glass-card p-8 flex flex-col h-full"
-        >
-          <div className="w-12 h-12 rounded-xl bg-tz-green/10 flex items-center justify-center text-tz-green mb-6">
-            {IconMap[policy.icon]}
-          </div>
-          <span className="text-[10px] font-bold uppercase tracking-widest text-tz-blue mb-2 block">{policy.category}</span>
-          <h3 className="text-xl font-bold text-tz-black mb-4">{policy.title}</h3>
-          <p className="text-sm text-neutral-500 leading-relaxed flex-1">{policy.description}</p>
-          <button className="mt-8 text-sm font-bold text-tz-green hover:underline">Soma zaidi</button>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-);
-
-export const Mikakati = () => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-12">
-    <div className="text-center text-white mb-16">
-      <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">Mikakati ya Utekelezaji</h1>
-      <p className="text-xl text-neutral-300 max-w-2xl mx-auto">Mipango madhubuti ya muda mfupi na mrefu kwa ajili ya kuleta mabadiliko ya kweli.</p>
-    </div>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {STRATEGIES.map((strat) => (
-        <div key={strat.id} className="glass-card p-10 relative overflow-hidden group">
-          <div className={`absolute top-0 right-0 w-24 h-24 -mr-8 -mt-8 rounded-full opacity-10 transition-transform duration-500 group-hover:scale-150 ${strat.color === 'tz-green' ? 'bg-tz-green' : strat.color === 'tz-blue' ? 'bg-tz-blue' : 'bg-tz-yellow'}`}></div>
-          <div className={`text-5xl font-display font-bold mb-8 ${strat.color === 'tz-green' ? 'text-tz-green' : strat.color === 'tz-blue' ? 'text-tz-blue' : 'text-tz-yellow'}`}>
-            {strat.number}
-          </div>
-          <h3 className="text-2xl font-bold text-tz-black mb-4">{strat.title}</h3>
-          <p className="text-neutral-500 leading-relaxed">{strat.description}</p>
+export const CategoryPage = ({ category, title, description }: { category: string, title: string, description: string }) => {
+  const filteredPosts = POSTS.filter(post => post.category === category);
+  
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12">
+      <div className="text-center mb-20">
+        <span className="inline-block px-4 py-1 bg-tz-green/10 text-tz-green text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Mageuzi {category}</span>
+        <h1 className="text-4xl md:text-6xl font-serif font-black text-tz-black mb-6 tracking-tight">{title}</h1>
+        <p className="text-xl text-neutral-500 max-w-2xl mx-auto font-light leading-relaxed">{description}</p>
+      </div>
+      
+      {filteredPosts.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          {filteredPosts.map((post) => (
+            <NewsCard key={post.id} post={post} />
+          ))}
         </div>
-      ))}
+      ) : (
+        <div className="glass-card p-20 text-center text-neutral-400 font-serif italic text-xl">
+          Hakuna makala zilizopatikana katika kundi hili kwa sasa.
+        </div>
+      )}
     </div>
-  </div>
-);
+  );
+};
 
 export const Ziara = () => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-12">
-    <div className="text-center text-white mb-16">
-      <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">Ziara na Matukio</h1>
-      <p className="text-xl text-neutral-300 max-w-2xl mx-auto">Kufika kila mahali kusikiliza na kuona maendeleo ya wananchi wetu.</p>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12">
+    <div className="text-center mb-20">
+      <span className="inline-block px-4 py-1 bg-tz-green/10 text-tz-green text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Ziara na Matukio</span>
+      <h1 className="text-4xl md:text-6xl font-serif font-black text-tz-black mb-6 tracking-tight">Ziara na Matukio</h1>
+      <p className="text-xl text-neutral-500 max-w-2xl mx-auto font-light leading-relaxed">Kufika kila mahali kusikiliza na kuona maendeleo ya wananchi wetu.</p>
     </div>
     <div className="relative">
-      <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-white/10 -translate-x-1/2 hidden md:block"></div>
+      <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-neutral-100 -translate-x-1/2 hidden md:block"></div>
       <div className="space-y-12">
         {EVENTS.map((event, idx) => (
           <div key={event.id} className={`relative flex flex-col md:flex-row items-center ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-            <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-tz-green border-4 border-neutral-900 shadow-sm -translate-x-1/2 z-10 hidden md:block"></div>
+            <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-tz-green border-4 border-white shadow-sm -translate-x-1/2 z-10 hidden md:block"></div>
             <div className="w-full md:w-1/2 px-8">
               <motion.div 
                 initial={{ opacity: 0, x: idx % 2 === 0 ? 20 : -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="glass-card p-8"
+                className="glass-card p-8 border-l-4 border-tz-green"
               >
-                <div className="flex items-center gap-2 text-tz-blue font-bold text-xs mb-3">
+                <div className="flex items-center gap-2 text-tz-green font-bold text-[10px] uppercase tracking-widest mb-3">
                   <MapPin className="w-3 h-3" /> {event.location}
                 </div>
-                <h3 className="text-xl font-bold text-tz-black mb-3">{event.title}</h3>
-                <p className="text-sm text-neutral-500 mb-6 leading-relaxed">{event.description}</p>
-                <div className="text-xs font-medium text-neutral-400 flex items-center gap-2">
+                <h3 className="text-xl font-serif font-bold text-tz-black mb-3 leading-tight">{event.title}</h3>
+                <p className="text-sm text-neutral-500 mb-6 leading-relaxed font-light">{event.description}</p>
+                <div className="text-[10px] font-bold text-neutral-400 flex items-center gap-2 uppercase tracking-widest">
                   <Clock className="w-3 h-3" /> {event.date}
                 </div>
               </motion.div>
@@ -96,18 +76,19 @@ export const Ziara = () => (
 );
 
 export const Rekodi = () => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-12">
-    <div className="text-center text-white mb-16">
-      <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">Rekodi Muhimu</h1>
-      <p className="text-xl text-neutral-300 max-w-2xl mx-auto">Hifadhi ya nyaraka na kumbukumbu za utendaji kazi kwa ajili ya uwazi.</p>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12">
+    <div className="text-center mb-20">
+      <span className="inline-block px-4 py-1 bg-tz-green/10 text-tz-green text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Rekodi na Nyaraka</span>
+      <h1 className="text-4xl md:text-6xl font-serif font-black text-tz-black mb-6 tracking-tight">Rekodi Muhimu</h1>
+      <p className="text-xl text-neutral-500 max-w-2xl mx-auto font-light leading-relaxed">Hifadhi ya nyaraka na kumbukumbu za utendaji kazi kwa ajili ya uwazi.</p>
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {RECORDS.map((record) => (
-        <div key={record.id} className="glass-card p-8 text-center group hover:bg-tz-black hover:text-white transition-all duration-300">
-          <div className="text-4xl font-display font-bold text-tz-green mb-4 group-hover:text-tz-yellow">{record.count}</div>
-          <h3 className="text-lg font-bold mb-2">{record.title}</h3>
-          <p className="text-xs text-neutral-500 group-hover:text-neutral-400">{record.description}</p>
-          <button className="mt-6 px-4 py-2 rounded-lg border border-neutral-200 text-xs font-bold group-hover:border-white/20">Fungua Nyaraka</button>
+        <div key={record.id} className="glass-card p-8 text-center group hover:bg-tz-green hover:text-white transition-all duration-500 border-b-4 border-transparent hover:border-tz-black">
+          <div className="text-5xl font-serif font-black text-tz-green mb-4 group-hover:text-white transition-colors tracking-tighter">{record.count}</div>
+          <h3 className="text-lg font-serif font-bold mb-2 leading-tight">{record.title}</h3>
+          <p className="text-xs text-neutral-500 group-hover:text-white/70 font-light mb-6">{record.description}</p>
+          <button className="btn-outline w-full py-3 text-xs">Fungua Nyaraka</button>
         </div>
       ))}
     </div>
@@ -115,26 +96,26 @@ export const Rekodi = () => (
 );
 
 export const Vision = () => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div className="glass-card p-12 md:p-24 text-center relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-tz-green via-tz-yellow to-tz-blue"></div>
-      <Eye className="w-16 h-16 text-tz-blue mx-auto mb-10" />
-      <h1 className="text-4xl md:text-7xl font-display font-bold text-tz-black mb-12 italic">Dira Yetu (Our Vision)</h1>
-      <p className="text-2xl md:text-4xl text-neutral-600 max-w-5xl mx-auto leading-relaxed font-light mb-16">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20">
+    <div className="glass-card p-12 md:p-24 text-center relative overflow-hidden border-t-8 border-tz-green">
+      <div className="absolute top-0 left-0 w-full h-1 bg-tz-green/20"></div>
+      <Eye className="w-16 h-16 text-tz-green mx-auto mb-10" />
+      <h1 className="text-4xl md:text-7xl font-serif font-black text-tz-black mb-12 italic tracking-tighter">Dira Yetu (Our Vision)</h1>
+      <p className="text-2xl md:text-4xl text-neutral-600 max-w-5xl mx-auto leading-relaxed font-light mb-16 italic">
         "Kujenga Tanzania ambapo kila mwananchi, bila kujali asili yake, ana fursa sawa ya kufanikiwa na kuchangia katika ustawi wa taifa letu kupitia uongozi bora na maendeleo jumuishi."
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left pt-12 border-t border-neutral-100">
         <div className="space-y-4">
-          <h4 className="font-bold text-tz-green text-xl">Umoja</h4>
-          <p className="text-sm text-neutral-500">Kuunganisha nguvu za kila mwananchi bila ubaguzi wa itikadi, dini au kabila.</p>
+          <h4 className="font-serif font-black text-tz-green text-xl tracking-tight">Umoja</h4>
+          <p className="text-sm text-neutral-500 font-light leading-relaxed">Kuunganisha nguvu za kila mwananchi bila ubaguzi wa itikadi, dini au kabila.</p>
         </div>
         <div className="space-y-4">
-          <h4 className="font-bold text-tz-blue text-xl">Haki</h4>
-          <p className="text-sm text-neutral-500">Kuhakikisha mifumo ya kisheria na kijamii inatoa haki sawa kwa wote.</p>
+          <h4 className="font-serif font-black text-tz-green text-xl tracking-tight">Haki</h4>
+          <p className="text-sm text-neutral-500 font-light leading-relaxed">Kuhakikisha mifumo ya kisheria na kijamii inatoa haki sawa kwa wote.</p>
         </div>
         <div className="space-y-4">
-          <h4 className="font-bold text-tz-yellow text-xl">Maendeleo</h4>
-          <p className="text-sm text-neutral-500">Kukuza uchumi unaogusa maisha ya watu wa hali ya chini kabisa.</p>
+          <h4 className="font-serif font-black text-tz-green text-xl tracking-tight">Maendeleo</h4>
+          <p className="text-sm text-neutral-500 font-light leading-relaxed">Kukuza uchumi unaogusa maisha ya watu wa hali ya chini kabisa.</p>
         </div>
       </div>
     </div>
@@ -142,45 +123,50 @@ export const Vision = () => (
 );
 
 export const Contact = () => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div className="glass-card overflow-hidden flex flex-col md:flex-row max-w-5xl mx-auto">
-      <div className="md:w-1/3 bg-tz-green p-12 text-white flex flex-col justify-between">
-        <div>
-          <h2 className="text-3xl font-display font-bold mb-6">Wasiliana Nasi</h2>
-          <p className="text-white/80 mb-12">Tunaomba maoni yako au maswali yoyote uliyo nayo kuhusu jukwaa hili.</p>
-          <div className="space-y-6">
-            <div className="flex items-center gap-4">
-              <Mail className="w-6 h-6" />
-              <span>info@maendeleojumuishi.tz</span>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20">
+    <div className="glass-card overflow-hidden flex flex-col md:flex-row max-w-6xl mx-auto shadow-2xl">
+      <div className="md:w-1/3 bg-tz-black p-12 text-white flex flex-col justify-between relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-tz-green/20 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+        <div className="relative z-10">
+          <h2 className="text-3xl font-serif font-black mb-6 tracking-tight">Wasiliana Nasi</h2>
+          <p className="text-white/60 mb-12 font-light leading-relaxed">Tunaomba maoni yako au maswali yoyote uliyo nayo kuhusu jukwaa hili.</p>
+          <div className="space-y-8">
+            <div className="flex items-center gap-4 group cursor-pointer">
+              <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-tz-green transition-colors">
+                <Mail className="w-5 h-5 text-tz-yellow" />
+              </div>
+              <span className="text-sm font-bold tracking-wider">info@maendeleojumuishi.tz</span>
             </div>
-            <div className="flex items-center gap-4">
-              <Twitter className="w-6 h-6" />
-              <span>@MaendeleoTZ</span>
+            <div className="flex items-center gap-4 group cursor-pointer">
+              <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-tz-green transition-colors">
+                <Twitter className="w-5 h-5 text-tz-yellow" />
+              </div>
+              <span className="text-sm font-bold tracking-wider">@MaendeleoTZ</span>
             </div>
           </div>
         </div>
-        <div className="flex gap-4 mt-12">
-          <Github className="w-5 h-5 opacity-50" />
-          <Linkedin className="w-5 h-5 opacity-50" />
+        <div className="flex gap-6 mt-12 relative z-10">
+          <Twitter className="w-5 h-5 text-white/30 hover:text-white transition-colors cursor-pointer" />
+          <Linkedin className="w-5 h-5 text-white/30 hover:text-white transition-colors cursor-pointer" />
         </div>
       </div>
-      <div className="md:w-2/3 p-12">
-        <form className="space-y-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-wider text-neutral-400">Jina Kamili</label>
-              <input type="text" className="w-full px-4 py-4 rounded-xl bg-neutral-50 border border-neutral-100 focus:outline-none focus:ring-2 focus:ring-tz-green/20" placeholder="Jina lako..." />
+      <div className="md:w-2/3 p-12 md:p-20 bg-white">
+        <form className="space-y-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+            <div className="space-y-3">
+              <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">Jina Kamili</label>
+              <input type="text" className="w-full px-0 py-4 bg-transparent border-b border-neutral-200 focus:outline-none focus:border-tz-green transition-all text-lg font-serif" placeholder="Jina lako..." />
             </div>
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-wider text-neutral-400">Barua Pepe</label>
-              <input type="email" className="w-full px-4 py-4 rounded-xl bg-neutral-50 border border-neutral-100 focus:outline-none focus:ring-2 focus:ring-tz-green/20" placeholder="email@mfano.com" />
+            <div className="space-y-3">
+              <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">Barua Pepe</label>
+              <input type="email" className="w-full px-0 py-4 bg-transparent border-b border-neutral-200 focus:outline-none focus:border-tz-green transition-all text-lg font-serif" placeholder="email@mfano.com" />
             </div>
           </div>
-          <div className="space-y-2">
-            <label className="text-xs font-bold uppercase tracking-wider text-neutral-400">Ujumbe</label>
-            <textarea rows={5} className="w-full px-4 py-4 rounded-xl bg-neutral-50 border border-neutral-100 focus:outline-none focus:ring-2 focus:ring-tz-green/20 resize-none" placeholder="Andika ujumbe wako hapa..."></textarea>
+          <div className="space-y-3">
+            <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">Ujumbe</label>
+            <textarea rows={4} className="w-full px-0 py-4 bg-transparent border-b border-neutral-200 focus:outline-none focus:border-tz-green transition-all text-lg font-serif resize-none" placeholder="Andika ujumbe wako hapa..."></textarea>
           </div>
-          <button className="w-full bg-tz-black text-white py-5 rounded-xl font-bold hover:bg-neutral-800 transition-all shadow-xl">
+          <button className="btn-green w-full md:w-auto">
             Tuma Ujumbe
           </button>
         </form>
@@ -189,33 +175,37 @@ export const Contact = () => (
   </div>
 );
 
-export const CategoryPage = ({ category, title, description }: { category: string, title: string, description: string }) => {
-  const filteredPosts = POSTS.filter(post => post.category === category);
+export const Kiuchumi = () => <CategoryPage category="Kiuchumi" title="Uchumi na Maendeleo" description="Uchambuzi wa kina wa hali ya uchumi na mikakati ya kukuza kipato cha mwananchi." />;
+export const Kisiasa = () => <CategoryPage category="Kisiasa" title="Siasa na Uongozi" description="Habari na uchambuzi wa masuala ya kisiasa na uongozi bora nchini Tanzania." />;
+export const Kijamii = () => <CategoryPage category="Kijamii" title="Masuala ya Jamii" description="Maendeleo ya kijamii, afya, elimu na ustawi wa kila mwananchi." />;
+export const SeraPage = () => <CategoryPage category="Sera" title="Sera na Dira" description="Misingi ya maendeleo yetu imejikita katika sera zinazogusa maisha ya kila siku ya mwananchi." />;
+export const MikakatiPage = () => <CategoryPage category="Mikakati" title="Mikakati ya Mageuzi" description="Mipango madhubuti ya muda mfupi na mrefu kwa ajili ya kuleta mabadiliko ya kweli." />;
+export const Mengineyo = () => {
+  const mainCategories = ['Kiuchumi', 'Kisiasa', 'Kijamii', 'Sera', 'Mikakati'];
+  const filteredPosts = POSTS.filter(post => !mainCategories.includes(post.category));
   
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-12">
-      <div className="text-center text-white mb-16">
-        <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">{title}</h1>
-        <p className="text-xl text-neutral-300 max-w-2xl mx-auto">{description}</p>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12">
+      <div className="text-center mb-20">
+        <span className="inline-block px-4 py-1 bg-tz-green/10 text-tz-green text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Mageuzi Mengineyo</span>
+        <h1 className="text-4xl md:text-6xl font-serif font-black text-tz-black mb-6 tracking-tight">Mengineyo</h1>
+        <p className="text-xl text-neutral-500 max-w-2xl mx-auto font-light leading-relaxed">Habari na uchambuzi wa masuala mbalimbali yanayohusu maendeleo ya taifa letu.</p>
       </div>
       
       {filteredPosts.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {filteredPosts.map((post) => (
             <NewsCard key={post.id} post={post} />
           ))}
         </div>
       ) : (
-        <div className="glass-card p-12 text-center text-neutral-500">
+        <div className="glass-card p-20 text-center text-neutral-400 font-serif italic text-xl">
           Hakuna makala zilizopatikana katika kundi hili kwa sasa.
         </div>
       )}
     </div>
   );
 };
-
-export const Kiuchumi = () => <CategoryPage category="Kiuchumi" title="Uchumi na Maendeleo" description="Uchambuzi wa kina wa hali ya uchumi na mikakati ya kukuza kipato cha mwananchi." />;
-export const Kisiasa = () => <CategoryPage category="Kisiasa" title="Siasa na Uongozi" description="Habari na uchambuzi wa masuala ya kisiasa na uongozi bora nchini Tanzania." />;
-export const Kijamii = () => <CategoryPage category="Kijamii" title="Masuala ya Jamii" description="Maendeleo ya kijamii, afya, elimu na ustawi wa kila mwananchi." />;
+export const Kiteknolojia = () => <CategoryPage category="Kiteknolojia" title="Teknolojia na Ubunifu" description="Mageuzi ya kidijitali na matumizi ya teknolojia kwa maendeleo ya taifa." />;
 export const Diplomatic = () => <CategoryPage category="Diplomatic" title="Diplomasia na Uhusiano" description="Tanzania katika jukwaa la kimataifa na uhusiano wetu na mataifa mengine." />;
 export const Nakala = () => <CategoryPage category="Nakala" title="Nakala na Nyaraka" description="Mkusanyiko wa nakala, ripoti na nyaraka muhimu za maendeleo." />;

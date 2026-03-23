@@ -1,74 +1,121 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { POSTS } from '../data';
-import { Sidebar } from '../components/News';
-import { ArrowLeft, Calendar, User, Tag, Share2 } from 'lucide-react';
+import { NewsCard } from '../components/News';
+import { Calendar, Clock, Users, Share2, Bookmark } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export const PostDetail = () => {
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
   const post = POSTS.find(p => p.id === id);
 
   if (!post) {
     return (
-      <div className="max-w-7xl mx-auto px-4 py-20 text-center">
-        <h2 className="text-2xl font-bold text-white">Makala haikupatikana</h2>
-        <Link to="/" className="text-tz-green hover:underline mt-4 inline-block">Rudi Mwanzo</Link>
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-4xl font-serif font-bold mb-4">Habari Haijapatikana</h2>
+          <Link to="/" className="text-tz-green font-bold hover:underline">Rudi Nyumbani</Link>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        <div className="lg:col-span-2">
-          <Link to="/" className="flex items-center gap-2 text-white/70 hover:text-white mb-8 transition-colors">
-            <ArrowLeft className="w-4 h-4" /> Rudi Mwanzo
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="bg-white pt-64"
+    >
+      {/* Article Header */}
+      <header className="py-12 border-b border-neutral-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <Link to={`/category/${post.category.toLowerCase()}`} className="inline-block px-4 py-1 bg-tz-green/10 text-tz-green text-[10px] font-bold uppercase tracking-widest rounded-full mb-8">
+            {post.category}
           </Link>
+          <h1 className="text-4xl md:text-6xl font-serif font-black text-tz-black mb-8 leading-[1.1] tracking-tight">
+            {post.title}
+          </h1>
+          <div className="flex flex-wrap items-center gap-8 py-6 border-y border-neutral-100">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center">
+                <Users className="w-6 h-6 text-neutral-400" />
+              </div>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-tz-black">Deogratius Malingula</p>
+                <p className="text-[10px] text-neutral-400 uppercase tracking-widest">Mhariri Mkuu</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-neutral-400 ml-auto">
+              <span className="flex items-center gap-2"><Calendar className="w-3 h-3" /> {post.date}</span>
+              <span className="flex items-center gap-2"><Clock className="w-3 h-3" /> 6 min read</span>
+            </div>
+          </div>
+        </div>
+      </header>
 
-          <article className="glass-card overflow-hidden">
-            {post.image && (
-              <img 
-                src={post.image} 
-                alt={post.title} 
-                className="w-full h-[400px] object-cover"
-                referrerPolicy="no-referrer"
-              />
-            )}
-            <div className="p-8 md:p-12">
-              <div className="flex flex-wrap items-center gap-6 text-sm text-neutral-400 mb-8 border-b border-neutral-100 pb-6">
-                <span className="flex items-center gap-2"><Calendar className="w-4 h-4" /> {post.date}</span>
-                <span className="flex items-center gap-2"><User className="w-4 h-4" /> {post.author || 'Deogratius Malingula'}</span>
-                <span className="px-3 py-1 rounded-full bg-tz-green/10 text-tz-green font-bold text-xs uppercase">{post.category}</span>
+      {/* Article Content */}
+      <div className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-16">
+            <div className="lg:col-span-8 lg:col-start-1">
+              <div className="mb-12 rounded-xl overflow-hidden shadow-2xl">
+                <img 
+                  src={post.image} 
+                  alt={post.title} 
+                  className="w-full h-auto object-cover"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="bg-neutral-50 p-4 text-[10px] text-neutral-400 uppercase tracking-widest font-bold border-t border-neutral-100">
+                  Picha: Maendeleo Jumuishi Archive / 2026
+                </div>
               </div>
 
-              <h1 className="text-3xl md:text-5xl font-display font-bold text-tz-black mb-8 leading-tight">
-                {post.title}
-              </h1>
-
-              <div className="prose prose-neutral max-w-none text-neutral-600 leading-relaxed space-y-6">
-                {post.content.split('\n\n').map((para, i) => (
-                  <p key={i}>{para}</p>
+              <div className="post-content">
+                <p className="text-xl font-medium text-tz-black leading-relaxed mb-10 italic">
+                  {post.preview}
+                </p>
+                {post.content.split('\n\n').map((paragraph, i) => (
+                  <p key={i}>{paragraph}</p>
                 ))}
               </div>
 
-              <div className="mt-12 pt-8 border-t border-neutral-100 flex flex-wrap justify-between items-center gap-6">
-                <div className="flex gap-2">
+              {/* Tags & Share */}
+              <div className="mt-16 pt-8 border-t border-neutral-100 flex flex-wrap items-center justify-between gap-8">
+                <div className="flex gap-3">
                   {post.tags.map(tag => (
-                    <span key={tag} className="flex items-center gap-1 px-3 py-1 rounded-lg bg-neutral-100 text-neutral-500 text-xs font-medium">
-                      <Tag className="w-3 h-3" /> {tag}
+                    <span key={tag} className="px-4 py-2 bg-neutral-50 rounded-full text-[10px] font-bold text-neutral-500 uppercase tracking-widest hover:bg-neutral-100 cursor-pointer transition-colors">
+                      #{tag}
                     </span>
                   ))}
                 </div>
-                <button className="flex items-center gap-2 text-tz-blue font-bold hover:bg-tz-blue/5 px-4 py-2 rounded-lg transition-all">
-                  <Share2 className="w-4 h-4" /> Sambaza Makala
-                </button>
+                <div className="flex items-center gap-6">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-400">Shiriki:</span>
+                  <div className="flex gap-4">
+                    <button className="p-3 rounded-full bg-neutral-50 hover:bg-tz-green hover:text-white transition-all">
+                      <Share2 className="w-4 h-4" />
+                    </button>
+                    <button className="p-3 rounded-full bg-neutral-50 hover:bg-tz-green hover:text-white transition-all">
+                      <Bookmark className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Related Posts */}
+              <div className="mt-24">
+                <div className="section-header">
+                  <h3 className="section-title">Habari Zinazohusiana</h3>
+                </div>
+                <div className="grid md:grid-cols-2 gap-8">
+                  {POSTS.filter(p => p.category === post.category && p.id !== post.id).slice(0, 2).map(p => (
+                    <NewsCard key={p.id} post={p} />
+                  ))}
+                </div>
               </div>
             </div>
-          </article>
+          </div>
         </div>
-
-        <Sidebar />
       </div>
-    </div>
+    </motion.div>
   );
 };
