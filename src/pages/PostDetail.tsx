@@ -42,13 +42,13 @@ export const PostDetail = () => {
                 <Users className="w-6 h-6 text-neutral-400" />
               </div>
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-tz-black">Deogratius Malingula</p>
-                <p className="text-[10px] text-neutral-400 uppercase tracking-widest">Mhariri Mkuu</p>
+                <p className="text-sm font-bold uppercase tracking-widest text-tz-green">Deogratius Malingula</p>
+                <p className="text-[10px] text-tz-black font-bold uppercase tracking-widest">Mhariri Mkuu</p>
               </div>
             </div>
-            <div className="flex items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-neutral-400 ml-auto">
-              <span className="flex items-center gap-2"><Calendar className="w-3 h-3" /> {post.date}</span>
-              <span className="flex items-center gap-2"><Clock className="w-3 h-3" /> 6 min read</span>
+            <div className="flex items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-tz-black ml-auto">
+              <span className="flex items-center gap-2"><Calendar className="w-3 h-3 text-tz-green" /> {post.date}</span>
+              <span className="flex items-center gap-2"><Clock className="w-3 h-3 text-tz-green" /> 6 min read</span>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ export const PostDetail = () => {
                   {post.preview}
                 </p>
                 {post.content.split('\n\n').map((paragraph, i) => (
-                  <p key={i}>{paragraph}</p>
+                  <p key={i} className="mb-8">{paragraph}</p>
                 ))}
               </div>
 

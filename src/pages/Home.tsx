@@ -22,10 +22,10 @@ export const Home = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-white/0 backdrop-blur-xl p-12 md:p-24 rounded-[60px] border border-white/20 shadow-2xl"
+            className="bg-white/80 backdrop-blur-xl p-12 md:p-24 rounded-[60px] border border-white/20 shadow-2xl"
           >
-            <span className="inline-block px-6 py-2 bg-neutral-50 border border-neutral-100 rounded-full text-[10px] font-black text-neutral-400 uppercase tracking-[0.4em] mb-12">
-              Azimio la Kitaifa
+            <span className="inline-block px-6 py-2 bg-neutral-50 border border-neutral-100 rounded-full text-[10px] font-black text-tz-yellow uppercase tracking-[0.4em] mb-12">
+              KARIBU SANA
             </span>
             
             <h1 className="text-6xl md:text-[8rem] font-serif font-black text-tz-black tracking-tighter leading-[0.82] uppercase mb-16">
@@ -36,15 +36,15 @@ export const Home = () => {
                   <path d="M0 10 Q 25 0 50 10 T 100 10" fill="none" stroke="currentColor" strokeWidth="4" />
                 </svg>
               </span> <br />
-              <span className="text-2xl md:text-4xl block my-8 text-neutral-300 font-light tracking-[0.6em] font-sans">za</span>
-              <span className="bg-clip-text text-transparent bg-gradient-to-b from-tz-black to-neutral-600">
+              <span className="text-2xl md:text-4xl block my-8 text-tz-black font-bold tracking-[0.6em] font-sans">za</span>
+              <span className="text-4xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-b from-tz-black to-tz-black">
                 Maendeleo Jumuishi
               </span>
             </h1>
 
             <div className="flex flex-col items-center gap-6">
               <div className="w-1 h-24 bg-gradient-to-b from-tz-green to-transparent"></div>
-              <p className="text-xs font-bold text-neutral-400 uppercase tracking-[0.3em]">Sogeza Chini Kupata Habari</p>
+              <p className="text-xs font-black text-tz-black uppercase tracking-[0.3em]">Sogeza Chini Kupata Habari</p>
             </div>
           </motion.div>
         </div>

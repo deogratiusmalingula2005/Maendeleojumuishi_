@@ -20,7 +20,7 @@
   }
   body {
     @apply text-ink font-sans min-h-screen relative overflow-x-hidden antialiased;
-    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url('https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=1920');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=1920');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -101,11 +101,11 @@
 }
 
 .bg-paper {
-  background-color: rgba(248, 249, 250, 0) !important;
-  backdrop-filter: blur(0px);
+  background-color: rgba(248, 249, 250, 0.8) !important;
+  backdrop-filter: blur(10px);
 }
 
 .bg-white {
-  background-color: rgba(255, 255, 255, 0) !important;
-  backdrop-filter: blur(0px);
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(10px);
 }

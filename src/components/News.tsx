@@ -21,9 +21,9 @@ export const NewsCard: React.FC<{ post: Post }> = ({ post }) => {
           </div>
         </div>
         <div className="p-8 flex-1 flex flex-col">
-          <div className="flex items-center gap-4 text-sm text-neutral-500 mb-4">
+          <div className="flex items-center gap-4 text-sm text-tz-black font-bold mb-4">
             <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4" />
+              <Calendar className="w-4 h-4 text-tz-green" />
               <span>{post.date}</span>
             </div>
           </div>

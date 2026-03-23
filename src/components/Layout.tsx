@@ -190,8 +190,8 @@ export const Footer = () => (
           <div className="mb-8">
             <Logo />
           </div>
-          <p className="text-white/60 text-lg leading-relaxed mb-8">
-            Kujenga Tanzania ya kesho kupitia uongozi bora, uwazi, na maendeleo jumuishi kwa kila mwananchi.
+          <p className="text-white/80 text-lg leading-relaxed mb-8 p-6 bg-white/5 rounded-2xl border-l-4 border-tz-yellow shadow-[0_0_15px_rgba(255,215,0,0.2)]">
+            <span className="text-tz-yellow font-bold">Ninaposema kuwa ninaamini katika zama mpya za maendeleo jumuishi,</span> ninamaanisha kuwa ni maendeleo yanayojengwa juu ya usawa wa fursa, ushiriki wa wananchi katika maamuzi, na matumizi bora ya rasilimali, maarifa na teknolojia. <span className="text-tz-yellow font-bold">Maendeleo sio tu faida kwa wachache pekee,</span> bali ni yanayojumuisha ustawi wa pamoja unaolenga kuinua maisha ya jamii nzima kwa njia endelevu na yenye haki.
           </p>
           <div className="flex gap-4">
             {[Facebook, Twitter, Instagram, Youtube].map((Icon, i) => (
@@ -229,28 +229,27 @@ export const Footer = () => (
           <div className="space-y-6">
             <div className="flex items-center gap-4 text-white/60">
               <Mail className="w-5 h-5 text-tz-green" />
-              <span>info@maendeleojumuishi.or.tz</span>
+              <span>maendeleojumuishitz@gmail.com</span>
             </div>
             <div className="flex items-center gap-4 text-white/60">
               <Phone className="w-5 h-5 text-tz-green" />
-              <span>+255 123 456 789</span>
+              <span>+255626425950</span>
             </div>
             <div className="flex items-center gap-4 text-white/60">
               <MapPin className="w-5 h-5 text-tz-green" />
-              <span>Dodoma, Tanzania</span>
+              <span>Arusha, Tanzania</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
-        <p className="text-sm text-white/40">
-          © {new Date().getFullYear()} MAENDELEO JUMUISHI. Haki zote zimehifadhiwa.
+      <div className="pt-12 border-t border-white/10 flex flex-col items-center gap-4">
+        <p className="text-sm text-white/60 font-bold tracking-widest uppercase">
+          Designed by <span className="text-tz-yellow">DEOGRATIUS J MALINGULA</span>
         </p>
-        <div className="flex gap-8 text-sm text-white/40">
-          <Link to="#" className="hover:text-white transition-colors">Vigezo na Masharti</Link>
-          <Link to="#" className="hover:text-white transition-colors">Sera ya Faragha</Link>
-        </div>
+        <p className="text-xs text-white/40 tracking-widest uppercase">
+          Copyright © {new Date().getFullYear()}
+        </p>
       </div>
     </div>
   </footer>

@@ -15,11 +15,11 @@ export const CategoryPage = ({ category, title, description }: { category: strin
   const filteredPosts = POSTS.filter(post => post.category === category);
   
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12 bg-white/0 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12 bg-white/80 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
       <div className="text-center mb-20">
-        <span className="inline-block px-4 py-1 bg-tz-green/10 text-tz-green text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Mageuzi {category}</span>
+        <span className="inline-block px-4 py-1 bg-tz-yellow/10 text-tz-yellow text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Mageuzi {category}</span>
         <h1 className="text-4xl md:text-6xl font-serif font-black text-tz-black mb-6 tracking-tight">{title}</h1>
-        <p className="text-xl text-neutral-500 max-w-2xl mx-auto font-light leading-relaxed">{description}</p>
+        <p className="text-xl text-tz-black max-w-2xl mx-auto font-bold leading-relaxed">{description}</p>
       </div>
       
       {filteredPosts.length > 0 ? (
@@ -38,11 +38,11 @@ export const CategoryPage = ({ category, title, description }: { category: strin
 };
 
 export const Ziara = () => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12 bg-white/0 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12 bg-white/80 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
     <div className="text-center mb-20">
-      <span className="inline-block px-4 py-1 bg-tz-green/10 text-tz-green text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Ziara na Matukio</span>
+      <span className="inline-block px-4 py-1 bg-tz-yellow/10 text-tz-yellow text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Ziara na Matukio</span>
       <h1 className="text-4xl md:text-6xl font-serif font-black text-tz-black mb-6 tracking-tight">Ziara na Matukio</h1>
-      <p className="text-xl text-neutral-500 max-w-2xl mx-auto font-light leading-relaxed">Kufika kila mahali kusikiliza na kuona maendeleo ya wananchi wetu.</p>
+      <p className="text-xl text-tz-black max-w-2xl mx-auto font-bold leading-relaxed">Kufika kila mahali kusikiliza na kuona maendeleo ya wananchi wetu.</p>
     </div>
     <div className="relative">
       <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-neutral-100 -translate-x-1/2 hidden md:block"></div>
@@ -76,11 +76,11 @@ export const Ziara = () => (
 );
 
 export const Rekodi = () => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12 bg-white/0 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12 bg-white/80 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
     <div className="text-center mb-20">
-      <span className="inline-block px-4 py-1 bg-tz-green/10 text-tz-green text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Rekodi na Nyaraka</span>
+      <span className="inline-block px-4 py-1 bg-tz-yellow/10 text-tz-yellow text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Rekodi na Nyaraka</span>
       <h1 className="text-4xl md:text-6xl font-serif font-black text-tz-black mb-6 tracking-tight">Rekodi Muhimu</h1>
-      <p className="text-xl text-neutral-500 max-w-2xl mx-auto font-light leading-relaxed">Hifadhi ya nyaraka na kumbukumbu za utendaji kazi kwa ajili ya uwazi.</p>
+      <p className="text-xl text-tz-black max-w-2xl mx-auto font-bold leading-relaxed">Hifadhi ya nyaraka na kumbukumbu za utendaji kazi kwa ajili ya uwazi.</p>
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {RECORDS.map((record) => (
@@ -96,26 +96,26 @@ export const Rekodi = () => (
 );
 
 export const Vision = () => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 bg-white/0 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 bg-white/80 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
     <div className="glass-card p-12 md:p-24 text-center relative overflow-hidden border-t-8 border-tz-green">
       <div className="absolute top-0 left-0 w-full h-1 bg-tz-green/20"></div>
       <Eye className="w-16 h-16 text-tz-green mx-auto mb-10" />
       <h1 className="text-4xl md:text-7xl font-serif font-black text-tz-black mb-12 italic tracking-tighter">Dira Yetu (Our Vision)</h1>
-      <p className="text-2xl md:text-4xl text-neutral-600 max-w-5xl mx-auto leading-relaxed font-light mb-16 italic">
+      <p className="text-2xl md:text-4xl text-tz-black max-w-5xl mx-auto leading-relaxed font-bold mb-16 italic">
         "Kujenga Tanzania ambapo kila mwananchi, bila kujali asili yake, ana fursa sawa ya kufanikiwa na kuchangia katika ustawi wa taifa letu kupitia uongozi bora na maendeleo jumuishi."
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left pt-12 border-t border-neutral-100">
         <div className="space-y-4">
           <h4 className="font-serif font-black text-tz-green text-xl tracking-tight">Umoja</h4>
-          <p className="text-sm text-neutral-500 font-light leading-relaxed">Kuunganisha nguvu za kila mwananchi bila ubaguzi wa itikadi, dini au kabila.</p>
+          <p className="text-sm text-tz-black font-bold leading-relaxed">Kuunganisha nguvu za kila mwananchi bila ubaguzi wa itikadi, dini au kabila.</p>
         </div>
         <div className="space-y-4">
           <h4 className="font-serif font-black text-tz-green text-xl tracking-tight">Haki</h4>
-          <p className="text-sm text-neutral-500 font-light leading-relaxed">Kuhakikisha mifumo ya kisheria na kijamii inatoa haki sawa kwa wote.</p>
+          <p className="text-sm text-tz-black font-bold leading-relaxed">Kuhakikisha mifumo ya kisheria na kijamii inatoa haki sawa kwa wote.</p>
         </div>
         <div className="space-y-4">
           <h4 className="font-serif font-black text-tz-green text-xl tracking-tight">Maendeleo</h4>
-          <p className="text-sm text-neutral-500 font-light leading-relaxed">Kukuza uchumi unaogusa maisha ya watu wa hali ya chini kabisa.</p>
+          <p className="text-sm text-tz-black font-bold leading-relaxed">Kukuza uchumi unaogusa maisha ya watu wa hali ya chini kabisa.</p>
         </div>
       </div>
     </div>
@@ -123,19 +123,19 @@ export const Vision = () => (
 );
 
 export const Contact = () => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 bg-white/0 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 bg-white/80 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
     <div className="glass-card overflow-hidden flex flex-col md:flex-row max-w-6xl mx-auto shadow-2xl">
       <div className="md:w-1/3 bg-tz-black p-12 text-white flex flex-col justify-between relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-tz-green/20 rounded-full -mr-16 -mt-16 blur-3xl"></div>
         <div className="relative z-10">
           <h2 className="text-3xl font-serif font-black mb-6 tracking-tight">Wasiliana Nasi</h2>
-          <p className="text-white/60 mb-12 font-light leading-relaxed">Tunaomba maoni yako au maswali yoyote uliyo nayo kuhusu jukwaa hili.</p>
+          <p className="text-white/80 mb-12 font-bold leading-relaxed">Tunaomba maoni yako au maswali yoyote uliyo nayo kuhusu jukwaa hili.</p>
           <div className="space-y-8">
             <div className="flex items-center gap-4 group cursor-pointer">
               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-tz-green transition-colors">
                 <Mail className="w-5 h-5 text-tz-yellow" />
               </div>
-              <span className="text-sm font-bold tracking-wider">info@maendeleojumuishi.tz</span>
+              <span className="text-sm font-bold tracking-wider">maendeleojumuishitz@gmail.com</span>
             </div>
             <div className="flex items-center gap-4 group cursor-pointer">
               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-tz-green transition-colors">
@@ -185,11 +185,11 @@ export const Mengineyo = () => {
   const filteredPosts = POSTS.filter(post => !mainCategories.includes(post.category));
   
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12 bg-white/0 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12 bg-white/80 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
       <div className="text-center mb-20">
-        <span className="inline-block px-4 py-1 bg-tz-green/10 text-tz-green text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Mageuzi Mengineyo</span>
+        <span className="inline-block px-4 py-1 bg-tz-yellow/10 text-tz-yellow text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Mageuzi Mengineyo</span>
         <h1 className="text-4xl md:text-6xl font-serif font-black text-tz-black mb-6 tracking-tight">Mengineyo</h1>
-        <p className="text-xl text-neutral-500 max-w-2xl mx-auto font-light leading-relaxed">Habari na uchambuzi wa masuala mbalimbali yanayohusu maendeleo ya taifa letu.</p>
+        <p className="text-xl text-tz-black max-w-2xl mx-auto font-bold leading-relaxed">Habari na uchambuzi wa masuala mbalimbali yanayohusu maendeleo ya taifa letu.</p>
       </div>
       
       {filteredPosts.length > 0 ? (
