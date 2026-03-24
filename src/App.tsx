@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { Header, Footer } from './components/Layout';
 import { Home } from './pages/Home';
 import { PostDetail } from './pages/PostDetail';
-import { SeraPage, Contact, Kiuchumi, Kisiasa, Kijamii, Kiteknolojia, Diplomatic, Nakala, MikakatiPage, Mengineyo } from './pages/Sections';
+import { SeraPage, Contact, Kiuchumi, Kisiasa, Kijamii, Kiteknolojia, Diplomatic, Nakala, MikakatiPage, Mengineyo, CCM } from './pages/Sections';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -42,6 +42,7 @@ export default function App() {
             <Route path="/sera" element={<SeraPage />} />
             <Route path="/mikakati" element={<MikakatiPage />} />
             <Route path="/mengineyo" element={<Mengineyo />} />
+            <Route path="/ccm" element={<CCM />} />
             <Route path="/nakala" element={<Nakala />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

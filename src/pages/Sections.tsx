@@ -181,7 +181,7 @@ export const Kijamii = () => <CategoryPage category="Kijamii" title="Masuala ya 
 export const SeraPage = () => <CategoryPage category="Sera" title="Sera na Dira" description="Misingi ya maendeleo yetu imejikita katika sera zinazogusa maisha ya kila siku ya mwananchi." />;
 export const MikakatiPage = () => <CategoryPage category="Mikakati" title="Mikakati ya Mageuzi" description="Mipango madhubuti ya muda mfupi na mrefu kwa ajili ya kuleta mabadiliko ya kweli." />;
 export const Mengineyo = () => {
-  const mainCategories = ['Kiuchumi', 'Kisiasa', 'Kijamii', 'Sera', 'Mikakati'];
+  const mainCategories = ['Kiuchumi', 'Kisiasa', 'Kijamii', 'Sera', 'Mikakati', 'CCM'];
   const filteredPosts = POSTS.filter(post => !mainCategories.includes(post.category));
   
   return (
@@ -209,3 +209,4 @@ export const Mengineyo = () => {
 export const Kiteknolojia = () => <CategoryPage category="Kiteknolojia" title="Teknolojia na Ubunifu" description="Mageuzi ya kidijitali na matumizi ya teknolojia kwa maendeleo ya taifa." />;
 export const Diplomatic = () => <CategoryPage category="Diplomatic" title="Diplomasia na Uhusiano" description="Tanzania katika jukwaa la kimataifa na uhusiano wetu na mataifa mengine." />;
 export const Nakala = () => <CategoryPage category="Nakala" title="Nakala na Nyaraka" description="Mkusanyiko wa nakala, ripoti na nyaraka muhimu za maendeleo." />;
+export const CCM = () => <CategoryPage category="CCM" title="Chama Cha Mapinduzi (CCM)" description="Habari, sera na misingi ya Chama Cha Mapinduzi." />;

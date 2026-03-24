@@ -2,6 +2,39 @@ import { Post, Policy, Strategy, Event, RecordItem } from './types';
 
 export const POSTS: Post[] = [
   {
+    id: 'post-24',
+    title: 'MALENGO NA MADHUMUNI YA CCM',
+    date: 'Machi 24, 2026',
+    category: 'CCM',
+    author: 'Deogratius Malingula',
+    preview: 'Malengo na madhumuni ya Chama Cha Mapinduzi (CCM) katika kujenga taifa.',
+    content: 'Kwa hiyo Malengo na Madhumuni ya CCM yatakuwa yafuatayo:\n\n(1) Kushinda katika Uchaguzi wa Serikali Kuu na Serikali za Mitaa Tanzania Bara na Zanzibar ili kuunda na kushika Serikali Kuu na Serikali za Mitaa katika Jamhuri ya Muungano wa Tanzania kwa upande mmoja na Zanzibar kwa upande wa pili.\n\n(2) Kulinda na kudumisha Uhuru wa Nchi yetu na raia wake.\n\n(3) Kuhimiza ujenzi wa Ujamaa na Kujitegemea kwa mujibu wa Azimio la Arusha.\n\n(4) Kusimamia utekelezaji wa Siasa ya CCM pamoja na kuendeleza fikra za viongozi waasisi wa vyama vya TANU na ASP, kama zilivyofafanuliwa katika maandiko mbalimbali ya Vyama hivyo.\n\n(5) Kuona kwamba kila mtu anayo haki ya kupata kutoka katika Jamii hifadhi ya maisha yake na mali yake kwa mujibu wa sheria.\n\n(6) Kuona kwamba katika Nchi yetu kila mtu aliye na uwezo wa kufanya kazi anafanya kazi; na kazi maana yake ni shughuli yoyote halali inayompatia mtu riziki yake.\n\n(7) Kusimamia haki na maendeleo ya Wakulima, Wafanyakazi na Wananchi wengine wenye shughuli halali za kujitegemea; na hasa kuona kwamba kila mtu ana haki ya kupata malipo yanayostahili kutokana na kazi yake.\n\n(8) Kuona kwamba kwa kutumia Vikao vilivyowekwa, raia anayo haki ya kushiriki kwa ukamilifu katika kufikia uamuzi wa mambo ya Taifa na yanayomhusu, na kwamba anao uhuru wa kutoa mawazo yake, wa kwenda anakoataka, wa kuamini Dini anayotaka na kukutana na watu wengine, maadamu havunji Sheria au Taratibu zilizowekwa.\n\n(9) Kuona kwamba Nchi yetu inatawaliwa kwa misingi ya kidemokrasia na ya kijamaa.\n\n(10) Kuhifadhi, kukuza na kudumisha imani na moyo wa kimapinduzi miongoni mwa Watanzania pamoja na ushirikiano na mshikamano miongoni mwao na na mataifa mengine duniani.\n\n(11) Kuweka na kudumisha heshima ya binadamu kwa kufuata barabara Kanuni za Tangazo la Dunia la Haki za Binadamu.\n\n(12) Kuona kwamba Dola inakuwa Mhimili wa Uchumi wa Taifa.\n\n(13) Kuona kwamba Serikali na Vyombo vyote vya Umma vinasaidia wananchi wote kujitegemea na kwamba vinatumika kwa ushirikiano na wananchi na siyo kwa ajili ya kuwatumia bali kwa ajili ya kuwasaidia wananchi kujitegemea.\n\n(14) Kuona kwamba matumizi ya utajiri wa Taifa yanatilila mkazo maendeleo ya Wananchi na hasa jitihada za kuondosha umasikini, Ujinga na Maradhi.\n\n(15) Kuona kwamba Serikali na vyombo vyote vya umma vinatoa nafasi zilizo sawa kwa raia wote, Wanawake na Wanaume bila kujali rangi, kabila, Dini, au hali ya mtu.\n\n(16) Kuona kwamba katika nchi yetu hakuna aina yoyote ya dhuluma, vitisho, ubaguzi, rushwa, uonevu na/au upendeleo.\n\n(17) Kuendeleza kupiga vita Ukoloni Mamboleo, Ubeberu na Ubaguzi wa aina yoyote.\n\n(18) Kuimarisha uhusiano mzuri na vyama vya Siasa vya Nchi nyingine vyenye itikadi kama ya CCM ambavyo kupinga Ukoloni, Ukoloni Mamboleo, Ubeberu na Ubaguzi wa aina yoyote.\n\n(19) Kushirikiana na Vyama vingine katika Afrika, kwa madhumuni ya kuleta Umoja wa Afrika, na kuona kwamba Serikali inaendeleza na kuimarisha ujirani mwema.',
+    tags: ['CCM', 'Malengo', 'Madhumuni', 'Siasa'],
+    image: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'post-23',
+    title: 'IMANI YA CCM',
+    date: 'Machi 24, 2026',
+    category: 'CCM',
+    author: 'Deogratius Malingula',
+    preview: 'Chama Cha Mapinduzi kinaamini katika usawa wa binadamu na Ujamaa na Kujitegemea.',
+    content: 'Chama Cha Mapinduzi kinaamini kwamba:\n\n(1) Binadamu wote ni sawa.\n(2) Kila mtu anastahili heshima ya kutambuliwa na kuthaminiwa utu wake.\n(3) Ujamaa na Kujitegemea ndiyo njia pekee ya kujenga jamii ya watu walio sawa na huru.',
+    tags: ['CCM', 'Imani', 'Siasa'],
+    image: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'post-22',
+    title: 'BENDERA, NEMBO NA VAZI RASMI LA CCM',
+    date: 'Machi 24, 2026',
+    category: 'CCM',
+    author: 'Deogratius Malingula',
+    preview: 'Maelezo kuhusu bendera, nembo, na vazi rasmi la Chama Cha Mapinduzi (CCM).',
+    content: '(1) Bendera ya CCM ina rangi ya kijani kibichi, ambayo ina alama ya Jembe (alama ya Mkulima) na Nyundo (alama ya Mfanyakazi) kwenye pembe ya juu upande wa mlingoti.\n\n(2) Nembo ya CCM ina Jembe na Nyundo kwa Mfumo wa kuzidisha, na chini inaunganishwa na neno “Chama cha Mapinduzi.”\n\n(3) Vazi rasmi la CCM ni suruali au sketi nyeusi na shati la kijani lenye nakshi ya njano.',
+    tags: ['CCM', 'Bendera', 'Nembo', 'Vazi'],
+    image: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
     id: 'post-21',
     title: 'MAJIBU: KIHONGOSI AMJIBU LEMA',
     date: 'Machi 23, 2026',

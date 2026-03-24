@@ -38,8 +38,9 @@ export const Header = () => {
     { name: 'Kijamii', path: '/kijamii' },
     { name: 'Sera', path: '/sera' },
     { name: 'Mikakati', path: '/mikakati' },
-    { name: 'Mengineyo', path: '/mengineyo' },
     { name: 'Mawasiliano', path: '/contact' },
+    { name: 'Mengineyo', path: '/mengineyo' },
+    { name: 'CCM', path: '/ccm' },
   ];
 
   return (
