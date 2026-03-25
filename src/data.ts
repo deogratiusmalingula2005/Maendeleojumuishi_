@@ -2,6 +2,50 @@ import { Post, Policy, Strategy, Event, RecordItem } from './types';
 
 export const POSTS: Post[] = [
   {
+    id: 'post-28',
+    title: 'MASHARTI YA UANACHAMA',
+    date: 'Machi 25, 2026',
+    category: 'CCM',
+    author: 'Deogratius Malingula',
+    preview: 'Masharti ya kujiunga na kuendelea kuwa mwanachama wa Chama Cha Mapinduzi (CCM).',
+    content: '### MASHARTI YA UANACHAMA\n\nIli mtu akubaliwe kuingia au kuendelea kuwa mwanachama wa Chama Cha Mapinduzi (CCM), ni sharti atimize vigezo na masharti yafuatayo:\n\n1. **Heshima kwa Binadamu:** Ni lazima mwanachama aonyeshe heshima kwa utu na haki za binadamu.\n\n2. **Uelewa na Utekelezaji wa Itikadi:** Ni sharti mwanachama ajitolee kuielewa, kuieleza, kuitetea, na kuitekeleza Itikadi na Siasa ya CCM.\n\n3. **Utu kupitia Kazi:** Ni lazima mwanachama aamini kuwa kazi ni kipimo cha utu na kutekeleza imani hiyo kwa vitendo.\n\n4. **Ushirikiano:** Ni sharti mwanachama awe na moyo wa kushirikiana na wenzake katika shughuli za chama na jamii.\n\n5. **Uongozi katika Utumishi wa Umma:** Ni lazima mwanachama awe mstari wa mbele katika utekelezaji wa mambo yote ya umma kwa mujibu wa Miongozo ya CCM.\n\n6. **Maadili na Tabia:** Ni sharti mwanachama awe mfano wa tabia njema kwa vitendo na kauli, awe mwaminifu, na aepuke vitendo vya ulevi au uzururaji.\n\n7. **Shughuli Halali:** Ni lazima mwanachama awe mkulima, mfanyakazi, au mwenye shughuli nyingine yoyote halali ya kujitegemea.',
+    tags: ['CCM', 'Uanachama', 'Masharti'],
+    image: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'post-27',
+    title: 'WANACHAMA WAPYA',
+    date: 'Machi 25, 2026',
+    category: 'CCM',
+    author: 'Deogratius Malingula',
+    preview: 'Masharti ya kujiunga na Chama Cha Mapinduzi (CCM).',
+    content: 'Raia yeyote wa Tanzania mwenye umri wa angalau miaka 18 anaweza kujiunga na Chama Cha Mapinduzi (CCM) endapo anakubali Imani, Malengo na Madhumuni ya CCM.',
+    tags: ['CCM', 'Wanachama', 'Siasa'],
+    image: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'post-26',
+    title: 'WANACHAMA WAASISI',
+    date: 'Machi 25, 2026',
+    category: 'CCM',
+    author: 'Deogratius Malingula',
+    preview: 'Ufafanuzi kuhusu wanachama waasisi wa CCM kutoka TANU na ASP.',
+    content: 'Mtu yeyote aliyewahi kuwa mwanachama wa TANU au ASP kabla ya vyama hivyo kuvunjwa, na ambaye alitimiza masharti ya uanachama wakati huo, anajumuishwa moja kwa moja kuwa mwanachama wa Chama Cha Mapinduzi (CCM).\n\nHata hivyo, mtu huyo anaweza kuamua mwenyewe kutokukubali uanachama huo.',
+    tags: ['CCM', 'Wanachama', 'Waasisi'],
+    image: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'post-25',
+    title: 'MAANA RAHISI YA KIFUNGU 5A',
+    date: 'Machi 25, 2026',
+    category: 'CCM',
+    author: 'Deogratius Malingula',
+    preview: 'Ufafanuzi wa maneno yanayotumika kwenye Katiba ya CCM ili kuondoa mkanganyiko.',
+    content: '🌿 MAANA RAHISI YA KIFUNGU 5A\n\nKifungu hiki kinafafanua maana ya baadhi ya istilahi zinazotumika katika Katiba ya CCM kwa lengo la kuondoa mkanganyiko wa tafsiri.\n\n### 1. Wabunge wa aina nyingine\nKwa mujibu wa kifungu hiki, wabunge wa aina nyingine ni pamoja na:\n- Wabunge wa Viti Maalum;\n- Wabunge walioteuliwa;\n- Wabunge wa Bunge la Afrika Mashariki;\n\nmradi wote wawe wametokana na Chama Cha Mapinduzi (CCM).\n\n### 2. Wawakilishi\nNeno “Wawakilishi” linarejelea wajumbe wa Baraza la Wawakilishi Zanzibar wanaotokana na Chama Cha Mapinduzi (CCM).\n\n### 3. Kanuni zinazohusika\nKanuni zinazohusika ni pamoja na:\n- Kanuni za CCM zilizoorodheshwa katika Nyongeza B ya Katiba;\n- Kanuni nyingine zozote zitakazotungwa kwa mujibu wa Katiba hii.\n\n### 4. Kipaumbele cha Katiba\nIwapo kutatokea mgongano kati ya Katiba na kanuni yoyote ya CCM:\n- Katiba itakuwa na mamlaka ya juu na itachukua kipaumbele juu ya kanuni husika.',
+    tags: ['CCM', 'Katiba', 'Ufafanuzi'],
+    image: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
     id: 'post-24',
     title: 'MALENGO NA MADHUMUNI YA CCM',
     date: 'Machi 24, 2026',
