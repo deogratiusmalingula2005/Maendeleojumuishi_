@@ -11,11 +11,11 @@ const IconMap: any = {
   'sprout': <Sprout className="w-6 h-6" />,
 };
 
-export const CategoryPage = ({ category, title, description }: { category: string, title: string, description: string }) => {
+export const CategoryPage = ({ category, title, description, pt = "pt-64" }: { category: string, title: string, description: string, pt?: string }) => {
   const filteredPosts = POSTS.filter(post => post.category === category);
   
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12 bg-white/80 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
+    <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${pt} pb-20 space-y-12 bg-white/80 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16`}>
       <div className="text-center mb-20">
         <span className="inline-block px-4 py-1 bg-tz-yellow/10 text-tz-yellow text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Mageuzi {category}</span>
         <h1 className="text-4xl md:text-6xl font-serif font-black text-tz-black mb-6 tracking-tight">{title}</h1>
@@ -175,8 +175,44 @@ export const Contact = () => (
   </div>
 );
 
-export const Kiuchumi = () => <CategoryPage category="Kiuchumi" title="Uchumi na Maendeleo" description="Uchambuzi wa kina wa hali ya uchumi na mikakati ya kukuza kipato cha mwananchi." />;
-export const Kisiasa = () => <CategoryPage category="Kisiasa" title="Siasa na Uongozi" description="Habari na uchambuzi wa masuala ya kisiasa na uongozi bora nchini Tanzania." />;
+export const Kiuchumi = () => (
+  <>
+    {/* YouTube Music Player - Aligned with Home Page */}
+    <section className="py-4 flex justify-center pt-64">
+      <div className="bg-neutral-900 p-4 rounded-2xl shadow-xl">
+        <iframe
+          width="320"
+          height="180"
+          src="https://www.youtube.com/embed/fw2y4pwJ_0A"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+    </section>
+    <CategoryPage pt="pt-12" category="Kiuchumi" title="Uchumi na Maendeleo" description="Uchambuzi wa kina wa hali ya uchumi na mikakati ya kukuza kipato cha mwananchi." />
+  </>
+);
+export const Kisiasa = () => (
+  <>
+    {/* YouTube Music Player - Aligned with Home Page */}
+    <section className="py-4 flex justify-center pt-64">
+      <div className="bg-neutral-900 p-4 rounded-2xl shadow-xl">
+        <iframe
+          width="320"
+          height="180"
+          src="https://www.youtube.com/embed/IjijfU7Rdck"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+    </section>
+    <CategoryPage pt="pt-12" category="Kisiasa" title="Siasa na Uongozi" description="Habari na uchambuzi wa masuala ya kisiasa na uongozi bora nchini Tanzania." />
+  </>
+);
 export const Kijamii = () => <CategoryPage category="Kijamii" title="Masuala ya Jamii" description="Maendeleo ya kijamii, afya, elimu na ustawi wa kila mwananchi." />;
 export const SeraPage = () => <CategoryPage category="Sera" title="Sera na Dira" description="Misingi ya maendeleo yetu imejikita katika sera zinazogusa maisha ya kila siku ya mwananchi." />;
 export const MikakatiPage = () => <CategoryPage category="Mikakati" title="Mikakati ya Mageuzi" description="Mipango madhubuti ya muda mfupi na mrefu kwa ajili ya kuleta mabadiliko ya kweli." />;
@@ -185,28 +221,62 @@ export const Mengineyo = () => {
   const filteredPosts = POSTS.filter(post => !mainCategories.includes(post.category));
   
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-64 pb-20 space-y-12 bg-white/80 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
-      <div className="text-center mb-20">
-        <span className="inline-block px-4 py-1 bg-tz-yellow/10 text-tz-yellow text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Mageuzi Mengineyo</span>
-        <h1 className="text-4xl md:text-6xl font-serif font-black text-tz-black mb-6 tracking-tight">Mengineyo</h1>
-        <p className="text-xl text-tz-black max-w-2xl mx-auto font-bold leading-relaxed">Habari na uchambuzi wa masuala mbalimbali yanayohusu maendeleo ya taifa letu.</p>
+    <>
+      {/* Instagram Post - Aligned with Home Page */}
+      <section className="py-4 flex justify-center pt-64">
+        <div className="bg-neutral-900 p-4 rounded-2xl shadow-xl">
+          <iframe
+            width="320"
+            height="400"
+            src="https://www.instagram.com/p/DV4L-_-DIgJ/embed"
+            title="Instagram Post"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </section>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 space-y-12 bg-white/80 backdrop-blur-md rounded-[40px] my-12 shadow-2xl border border-white/20 p-8 md:p-16">
+        <div className="text-center mb-20">
+          <span className="inline-block px-4 py-1 bg-tz-yellow/10 text-tz-yellow text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Mageuzi Mengineyo</span>
+          <h1 className="text-4xl md:text-6xl font-serif font-black text-tz-black mb-6 tracking-tight">Mengineyo</h1>
+          <p className="text-xl text-tz-black max-w-2xl mx-auto font-bold leading-relaxed">Habari na uchambuzi wa masuala mbalimbali yanayohusu maendeleo ya taifa letu.</p>
+        </div>
+        
+        {filteredPosts.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {filteredPosts.map((post) => (
+              <NewsCard key={post.id} post={post} />
+            ))}
+          </div>
+        ) : (
+          <div className="glass-card p-20 text-center text-neutral-400 font-serif italic text-xl">
+            Hakuna makala zilizopatikana katika kundi hili kwa sasa.
+          </div>
+        )}
       </div>
-      
-      {filteredPosts.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {filteredPosts.map((post) => (
-            <NewsCard key={post.id} post={post} />
-          ))}
-        </div>
-      ) : (
-        <div className="glass-card p-20 text-center text-neutral-400 font-serif italic text-xl">
-          Hakuna makala zilizopatikana katika kundi hili kwa sasa.
-        </div>
-      )}
-    </div>
+    </>
   );
 };
 export const Kiteknolojia = () => <CategoryPage category="Kiteknolojia" title="Teknolojia na Ubunifu" description="Mageuzi ya kidijitali na matumizi ya teknolojia kwa maendeleo ya taifa." />;
 export const Diplomatic = () => <CategoryPage category="Diplomatic" title="Diplomasia na Uhusiano" description="Tanzania katika jukwaa la kimataifa na uhusiano wetu na mataifa mengine." />;
 export const Nakala = () => <CategoryPage category="Nakala" title="Nakala na Nyaraka" description="Mkusanyiko wa nakala, ripoti na nyaraka muhimu za maendeleo." />;
-export const CCM = () => <CategoryPage category="CCM" title="Chama Cha Mapinduzi (CCM)" description="Habari, sera na misingi ya Chama Cha Mapinduzi." />;
+export const CCM = () => (
+  <>
+    {/* Instagram Reel - Aligned with Home Page */}
+    <section className="py-4 flex justify-center pt-64">
+      <div className="bg-neutral-900 p-4 rounded-2xl shadow-xl">
+        <iframe
+          width="320"
+          height="400"
+          src="https://www.instagram.com/reel/DN9-_E1iPQo/embed"
+          title="Instagram Reel"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+    </section>
+    <CategoryPage pt="pt-12" category="CCM" title="Chama Cha Mapinduzi (CCM)" description="Habari, sera na misingi ya Chama Cha Mapinduzi." />
+  </>
+);

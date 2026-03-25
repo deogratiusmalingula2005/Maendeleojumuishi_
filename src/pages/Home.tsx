@@ -10,9 +10,24 @@ export const Home = () => {
 
   return (
     <div className="bg-transparent pt-64">
+      
+      {/* YouTube Music Player */}
+      <section className="py-4 flex justify-center">
+        <div className="bg-neutral-900 p-4 rounded-2xl shadow-xl">
+          <iframe
+            width="320"
+            height="180"
+            src="https://www.youtube.com/embed/7zZyGkGN7Sw"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </section>
 
       {/* Hero Heading Section */}
-      <section className="py-24 md:py-40 bg-transparent relative overflow-hidden border-b border-neutral-100 shadow-sm">
+      <section className="py-12 md:py-20 bg-transparent relative overflow-hidden border-b border-neutral-100 shadow-sm">
         {/* Decorative elements */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-tz-green/5 rounded-full blur-[120px] -z-10"></div>
         <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-tz-green via-tz-yellow to-tz-blue opacity-20"></div>
