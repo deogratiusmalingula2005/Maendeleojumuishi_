@@ -6,7 +6,8 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Header, Footer } from './components/Layout';
-import FallingDecorations from './components/FallingDecorations';
+import VideoIntro from './components/VideoIntro';
+import WelcomeIntro from './components/WelcomeIntro';
 import { Home } from './pages/Home';
 import { PostDetail } from './pages/PostDetail';
 import { SeraNaHojaPage, HotubaPage, Contact, Kisiasa, Kijamii, Kiteknolojia, Diplomatic, Nakala, MikakatiPage, VideosPage, MiradiPage, MaktabaPage, Mengineyo, CCM } from './Sections';
@@ -21,10 +22,18 @@ const ScrollToTop = () => {
 };
 
 export default function App() {
-  const [showSplash, setShowSplash] = useState(true);
+  const [splashStep, setSplashStep] = useState<'video' | 'intro' | 'none'>('video');
+  const audioRef = React.useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    if (splashStep === 'intro' && audioRef.current) {
+      audioRef.current.play().catch(e => console.error("Play failed", e));
+    }
+  }, [splashStep]);
 
   return (
     <Router>
+      <audio ref={audioRef} src="/Maendeleojumuishi.mp3" />
       <ScrollToTop />
       {/* Fixed Background Elements */}
       <div className="site-overlay"></div>
@@ -33,7 +42,8 @@ export default function App() {
         <Header />
         
         <main className="flex-1">
-          {showSplash && <FallingDecorations onComplete={() => setShowSplash(false)} />}
+          {splashStep === 'video' && <VideoIntro onStart={() => audioRef.current?.pause()} onComplete={() => setSplashStep('intro')} />}
+          {splashStep === 'intro' && <WelcomeIntro onComplete={() => setSplashStep('none')} />}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/post/:id" element={<PostDetail />} />

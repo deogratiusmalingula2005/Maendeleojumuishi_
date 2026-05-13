@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Post } from '../types';
-import { POSTS } from '../data';
+import { POSTS } from '../components/data';
 
 export const usePostById = (id?: string) => {
   const [post, setPost] = useState<Post | null>(null);

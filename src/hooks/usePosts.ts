@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Post } from '../types';
-import { POSTS } from '../data';
+import { POSTS } from '../components/data';
 
 export const usePosts = () => {
   const [posts, setPosts] = useState<Post[]>([]);

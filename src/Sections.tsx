@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { usePosts } from './hooks/usePosts';
-import { POLICIES, STRATEGIES, EVENTS, RECORDS } from './data';
+import { POLICIES, STRATEGIES, EVENTS, RECORDS } from './components/data';
 import { GraduationCap, Cpu, HeartPulse, Sprout, MapPin, Clock, FileText, Database, Eye, Mail, Instagram, Facebook, MessageCircle } from 'lucide-react';
 import { NewsCard } from './News';
 

@@ -20,7 +20,7 @@ const Footer = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="relative flex items-center gap-3 mb-4">
                         <div className="bg-white p-1 rounded-xl shadow-lg shadow-brand-gold/20 mr-3">
-                            <img src="/Logo.png" alt="Logo" className="w-10 h-10 object-contain" />
+                            <img src="/Logo.png" alt="Logo" className="w-10 h-10 object-contain" fetchpriority="high" />
                         </div>
                         <h2 className="text-xl font-black text-white tracking-tight">MAENDELEO <span className='text-brand-gold'>JUMUISHI</span></h2>
                     </div>
