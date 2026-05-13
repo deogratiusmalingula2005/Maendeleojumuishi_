@@ -10,13 +10,6 @@ export const Home = () => {
 
   return (
     <div className="pt-20 pb-20 bg-black/20 min-h-screen">
-      {/* Audio Player */}
-      <section className="py-4 flex justify-center mb-12">
-        <div className="bg-neutral-900 p-4 rounded-2xl shadow-xl">
-          <audio src="/Maendeleojumuishi.mp3" controls autoPlay loop />
-        </div>
-      </section>
-
       {/* Hero Section */}
       <section className="flex justify-center px-4 mb-24">
         <div className="w-full max-w-lg bg-blue-900/30 backdrop-blur-xl p-10 rounded-[40px] border border-blue-500/30 text-center shadow-[0_0_50px_rgba(0,0,0,0.5)]">
@@ -46,7 +39,7 @@ export const Home = () => {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-12">
-            <h2 className="text-3xl font-display font-bold text-white">Habari za Hivi Karibuni</h2>
+            <h2 className="text-3xl font-display font-bold text-white">Maudhui ya Hivi Karibuni</h2>
             <Link to="/nakala" className="nav-link flex items-center gap-2 text-white/80">
               Zote <ChevronRight className="w-4 h-4" />
             </Link>
