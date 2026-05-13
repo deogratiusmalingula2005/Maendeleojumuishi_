@@ -38,33 +38,35 @@ export default function App() {
       {/* Fixed Background Elements */}
       <div className="site-overlay"></div>
 
-      <div className="relative z-10 flex flex-col min-h-screen">
-        <Header />
+      <div className={`relative z-10 flex flex-col min-h-screen ${splashStep === 'none' ? 'bg-[url(/Profile1.jpg)] bg-cover bg-center bg-fixed bg-no-repeat' : ''}`}>
+        {splashStep === 'none' && <Header />}
         
         <main className="flex-1">
           {splashStep === 'video' && <VideoIntro onStart={() => audioRef.current?.pause()} onComplete={() => setSplashStep('intro')} />}
           {splashStep === 'intro' && <WelcomeIntro onComplete={() => setSplashStep('none')} />}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/post/:id" element={<PostDetail />} />
-            <Route path="/seranahojapage" element={<SeraNaHojaPage />} />
-            <Route path="/hotuba" element={<HotubaPage />} />
-            <Route path="/kisiasa" element={<Kisiasa />} />
-            <Route path="/kijamii" element={<Kijamii />} />
-            <Route path="/kiteknolojia" element={<Kiteknolojia />} />
-            <Route path="/diplomatic" element={<Diplomatic />} />
-            <Route path="/mikakati" element={<MikakatiPage />} />
-            <Route path="/videos" element={<VideosPage />} />
-            <Route path="/miradi" element={<MiradiPage />} />
-            <Route path="/maktaba" element={<MaktabaPage />} />
-            <Route path="/mengineyo" element={<Mengineyo />} />
-            <Route path="/ccm" element={<CCM />} />
-            <Route path="/nakala" element={<Nakala />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+          {splashStep === 'none' && (
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/post/:id" element={<PostDetail />} />
+              <Route path="/seranahojapage" element={<SeraNaHojaPage />} />
+              <Route path="/hotuba" element={<HotubaPage />} />
+              <Route path="/kisiasa" element={<Kisiasa />} />
+              <Route path="/kijamii" element={<Kijamii />} />
+              <Route path="/kiteknolojia" element={<Kiteknolojia />} />
+              <Route path="/diplomatic" element={<Diplomatic />} />
+              <Route path="/mikakati" element={<MikakatiPage />} />
+              <Route path="/videos" element={<VideosPage />} />
+              <Route path="/miradi" element={<MiradiPage />} />
+              <Route path="/maktaba" element={<MaktabaPage />} />
+              <Route path="/mengineyo" element={<Mengineyo />} />
+              <Route path="/ccm" element={<CCM />} />
+              <Route path="/nakala" element={<Nakala />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          )}
         </main>
 
-        <Footer />
+        {splashStep === 'none' && <Footer />}
       </div>
     </Router>
   );

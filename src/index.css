@@ -19,11 +19,6 @@
 @layer base {
   html, body, #root {
     @apply min-h-screen text-white;
-    background-image: url('/Profile1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
   }
 }
 
