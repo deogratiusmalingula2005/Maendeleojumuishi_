@@ -1,0 +1,23 @@
+{
+  "entities": {
+    "Post": {
+      "title": "Post",
+      "description": "User generated post",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "author": { "type": "string" },
+        "category": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "content", "author", "category", "createdAt"]
+    }
+  },
+  "firestore": {
+    "posts/{postId}": {
+      "schema": "Post",
+      "description": "Collection of user posts"
+    }
+  }
+}
