@@ -26,6 +26,8 @@ export default function App() {
   const audioRef = React.useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
+    const img = new Image();
+    img.src = '/Profile1.jpg';
     if (splashStep === 'intro' && audioRef.current) {
       audioRef.current.play().catch(e => console.error("Play failed", e));
     }
@@ -38,7 +40,7 @@ export default function App() {
       {/* Fixed Background Elements */}
       <div className="site-overlay"></div>
 
-      <div className={`relative z-10 flex flex-col min-h-screen ${splashStep === 'none' ? 'bg-[url(/Profile1.jpg)] bg-cover bg-center bg-fixed bg-no-repeat' : ''}`}>
+      <div className="relative z-10 flex flex-col min-h-screen bg-[url(/Profile1.jpg)] bg-cover bg-center bg-fixed bg-no-repeat">
         {splashStep === 'none' && <Header />}
         
         <main className="flex-1">

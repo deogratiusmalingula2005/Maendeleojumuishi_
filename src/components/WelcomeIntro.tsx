@@ -10,9 +10,8 @@ const WelcomeIntro = ({ onComplete }: { onComplete: () => void }) => {
     return (
         <AnimatePresence>
             <motion.div
-                className="fixed inset-0 z-[200] flex items-center justify-center bg-[url('/Profile2.jpeg')] bg-cover bg-center bg-no-repeat"
-                initial={{ opacity: 1 }}
-                exit={{ opacity: 0, transition: { duration: 0.8 } }}
+                className="fixed inset-0 z-[200] flex items-center justify-center bg-[url('/Profile2.jpeg')] bg-cover bg-center bg-no-repeat bg-blue-950"
+                exit={{ opacity: 0, transition: { duration: 0.5 } }}
             >
                 <div className="absolute inset-0 z-0">
                     {/* Glowing light streaks */}
@@ -25,19 +24,15 @@ const WelcomeIntro = ({ onComplete }: { onComplete: () => void }) => {
 
                 <motion.div
                     className="relative z-10 text-center px-6 bg-blue-950/70 backdrop-blur-md border border-blue-800/30 p-8 rounded-2xl"
-                    initial={{ scale: 0.9, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.6 }}
+                    animate={{ y: [0, -15, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 >
-                    <motion.h1
+                    <h1
                         className="text-4xl md:text-6xl font-extrabold text-amber-500 leading-tight drop-shadow-2xl max-w-2xl mx-auto"
                         style={{ fontFamily: "'Times New Roman', serif" }}
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5, duration: 1 }}
                     >
                         KARIBU KATIKA ZAMA MPYA ZA MAENDELEO JUMUISHI 🇹🇿
-                    </motion.h1>
+                    </h1>
                 </motion.div>
                 
                 
